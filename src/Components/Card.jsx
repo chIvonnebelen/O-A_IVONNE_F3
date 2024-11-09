@@ -1,9 +1,17 @@
 import React from 'react'
 
-function Card({saludo}) {
+const Card = ({ submittedData }) => {
     return (
-        <div>{saludo}</div>
-    )
-}
-
-export default Card
+      <div className="card">
+        <h2>Recibimos tu canción:</h2>
+        {submittedData && (
+          <div>
+            <p>Tu artista es: {submittedData.firstField}</p>
+            <p>Tu canción es: {submittedData.secondField}</p>
+          </div>
+        )}
+      </div>
+    );
+  };
+  
+  export default Card;
